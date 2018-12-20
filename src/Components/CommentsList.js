@@ -5,12 +5,12 @@ import toggleOpen from '../decorators/toggleOpen'
 
 const CommentsList = ({ comments = [], isOpen, toggleOpen }) => {
   return (
-    <>
+    <div>
       <button onClick={toggleOpen}>
         {!isOpen ? "Show Comments" : "Hide Comments"}
       </button>
       {getBody(comments, isOpen)}
-    </>
+    </div>
   )
 }
 
