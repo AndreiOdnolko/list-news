@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { articles } from './fixtures';
 import ArticleList from './Components/ArticleList';
 
 
 class App extends Component {  
-  render() {    
+  render() {  
+    const { articles } = this.props;  
     return (
       <div className="App">
         <ArticleList articles = {articles} />
