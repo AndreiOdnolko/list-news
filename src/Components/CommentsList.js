@@ -1,16 +1,16 @@
 import React from 'react';
 import Comment from './Comment';
-import toggleOpen from '../decorators/toggleOpen'
+import toggleOpen from '../decorators/accordion'
 
 
 const CommentsList = ({ comments = [], isOpen, toggleOpen }) => {
   return (
-    <>
+    <div>
       <button onClick={toggleOpen}>
         {!isOpen ? "Show Comments" : "Hide Comments"}
       </button>
       {getBody(comments, isOpen)}
-    </>
+    </div>
   )
 }
 
