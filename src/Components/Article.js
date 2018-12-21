@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CommentsList from './CommentsList';
 
-class Article extends Component {
+class Article extends PureComponent {
   static propTypes = {
     article: PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -13,17 +13,14 @@ class Article extends Component {
     toggleOpen: PropTypes.func
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log('---', 'updating', this.props.isOpen, nextProps.isOpen)
-  }
-
-  componentWillMount() {
-    console.log('---', 'mounting')
-  }
+  // shouldComponentUpdate(nextProps, nextsState) {
+  //   return nextProps.isOpen !== this.props.isOpen
+  // }
   
   render() {
     const { title } = this.props.article;
     const { isOpen, toggleOpen } = this.props;
+    console.log('---', 'update article');
     return (
       <div ref = { this.setContainerRef }>
         <h3>{title}</h3>
@@ -33,15 +30,6 @@ class Article extends Component {
         {this.getBody()}
       </div>
     )
-  }
-
-  setContainerRef = ref => {
-    this.container = ref;
-    console.log('---', ref);
-  }
-
-  componentDidMount() {
-    console.log('---', 'mounted')
   }
 
   getBody() {

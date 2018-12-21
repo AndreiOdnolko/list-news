@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 
 export default (OriginalComponent) => class WrapperComponent extends Component {
   state = {
-    isOpen: false,
-    openArticleId: null
+    isOpen: false
   }
 
   render() {

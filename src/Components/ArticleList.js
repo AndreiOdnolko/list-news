@@ -11,7 +11,6 @@ class ArticleList extends Component {
     toggleOpenItem: PropTypes.func.isRequired
   }
   render() { 
-    console.log(this.props)
     const { articles, openItemId, toggleOpenItem } = this.props;
     const articleElements = articles.map(article => <li key={article.id}>
       <Article 
