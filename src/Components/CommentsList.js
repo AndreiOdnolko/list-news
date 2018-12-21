@@ -1,6 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
-import toggleOpen from '../decorators/accordion'
+import toggleOpen from '../decorators/toggleOpen'
 
 
 const CommentsList = ({ comments = [], isOpen, toggleOpen }) => {
