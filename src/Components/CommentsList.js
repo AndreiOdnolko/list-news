@@ -1,11 +1,13 @@
 import React from 'react';
 import Comment from './Comment';
 import toggleOpen from '../decorators/toggleOpen'
+import AddComentFrom from './AddComentFrom';
 
 
 const CommentsList = ({ comments = [], isOpen, toggleOpen }) => {
   return (
     <div>
+      <AddComentFrom />
       <button onClick={toggleOpen}>
         {!isOpen ? "Show Comments" : "Hide Comments"}
       </button>

@@ -1,5 +1,10 @@
 import React, { PureComponent } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { deleteArticle } from '../AC';
+
+import '../article.css';
 import CommentsList from './CommentsList';
 
 class Article extends PureComponent {
@@ -27,9 +32,23 @@ class Article extends PureComponent {
         <button onClick={toggleOpen}>
           {!isOpen ? "open" : "close"}
         </button>
-        {this.getBody()}
+        <button onClick={this.handleDelete}>
+          delete me
+        </button>
+        <ReactCSSTransitionGroup
+          transitionName="article"
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+        >
+          {this.getBody()}
+        </ReactCSSTransitionGroup>
       </div>
     )
+  }
+
+  handleDelete = () => {
+    const {deleteArticle, article} = this.props;
+    deleteArticle(article.id)
   }
 
   getBody() {
@@ -48,4 +67,4 @@ class Article extends PureComponent {
   }
 }
 
-export default Article;
+export default connect(null, {deleteArticle})(Article);
