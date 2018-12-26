@@ -1,7 +1,7 @@
 import React from 'react';
 import Comment from './Comment';
 import toggleOpen from '../decorators/toggleOpen'
-import AddComentFrom from './AddComentFrom';
+import AddComentFrom from './CommentForm/AddComentFrom';
 
 
 const CommentsList = ({ comments = [], isOpen, toggleOpen }) => {

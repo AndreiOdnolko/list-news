@@ -13,7 +13,7 @@ class AddComentFrom extends Component {
       <div>
         Name: <input type='text' className={this.toRedBorder(userName)(5, 15)} value = {userName} onChange = {this.handleChange('userName')} />
         Text: <input type='text' className={this.toRedBorder(text)(20, 50)} value = {text} onChange = {this.handleChange('text')}/>
-        <input type='text' value = 'submit' />
+        <input type='submit' value = 'submit'  />
       </div>
     );
   }

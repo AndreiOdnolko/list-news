@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import ArticleList from './ArticleList';
 import UserForm from './UserForm';
-import DayPickerFrom from './DayPicker';
+import Filters from './Filters';
 import Counter from './Counter';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Counter />
-        <DayPickerFrom />
+        <Filters />
         <UserForm />
         <ArticleList />
       </div>
