@@ -7,7 +7,6 @@ const idGetter = (state, props) => props.id
 
 export const filtratedArticlesSelector = createSelector(filterGetter, articlesGetter, (filter, articles) => {
   const {selected, dateRange: {from, to}} = filter
-  console.log('11')
   return articles.filter(article => {
     const published = Date.parse(article.date)
     return(!selected.length || selected.includes(article.id)) &&
@@ -16,5 +15,5 @@ export const filtratedArticlesSelector = createSelector(filterGetter, articlesGe
 })
 
 export const commentSelectorFactory = () => createSelector(commentsGetter, idGetter, (comments, id) => {
-  return comments.find(comment => comment.id === id)
+  return comments[id]
 })
