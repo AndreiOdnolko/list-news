@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const Comments = (props) => {  
   const { user, text } = props;
@@ -13,8 +14,12 @@ const Comments = (props) => {
 }
 
 Comments.propTypes = {
+  id: PropTypes.string.isRequired,
+  // from connect
   user: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired
 }
 
-export default Comments;
+export default connect(({comments}, ownProps) => {  
+  return comments.find(comment => comment.id === ownProps.id)
+})(Comments); 
